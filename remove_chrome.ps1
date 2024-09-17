@@ -5,8 +5,7 @@ if (Test-Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Unins
 
     foreach ($version in $versions) {
         $path = "C:\Program Files\Google\Chrome\Application\" + $version + "\Installer\setup.exe"
-        $output = Start-Process $path  -ArgumentList "--uninstall --multi-install --chrome --system-level --force-uninstall" -Wait -WindowStyle Hidden
-        Write-Host $output
+        Start-Process $path  -ArgumentList "--uninstall --multi-install --chrome --system-level --force-uninstall" -Wait -WindowStyle Hidden
     }
 }
 
@@ -16,7 +15,6 @@ if (Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Google 
 
     foreach ($version in $versions) {
         $path = "C:\Program Files\Google\Chrome\Application\" + $version + "\Installer\setup.exe"
-        $output = Start-Process $path  -ArgumentList "--uninstall --multi-install --chrome --system-level --force-uninstall" -Wait -WindowStyle Hidden
-        Write-Host $output
+        Start-Process $path  -ArgumentList "--uninstall --multi-install --chrome --system-level --force-uninstall" -Wait -WindowStyle Hidden
     }
 }
